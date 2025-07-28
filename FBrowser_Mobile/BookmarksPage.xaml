@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FBrowser_Mobile.BookmarksPage"
+             Title="Bookmarks">
+    
+    <ListView x:Name="bookmarkListView"
+              ItemSelected="OnBookmarkSelected"
+              Margin="0,10,0,0">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10" ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <!-- URL alanı genişler -->
+                            <ColumnDefinition Width="Auto" />
+                            <!-- Buton sabit kalır -->
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+               Text="{Binding Url}"
+               VerticalOptions="Center"
+               LineBreakMode="TailTruncation"
+               MaxLines="1" />
+
+                       
+
+                        <ImageButton Grid.Column="1"
+                                     HeightRequest="10"
+                                     WidthRequest="10"
+                                     BackgroundColor="Transparent"
+                                     Clicked="OnDeleteClicked"
+                                     CommandParameter="{Binding .}">
+                            <ImageButton.Source>
+                                <FontImageSource Glyph="✕" Color="LightGray" Size="50" />
+                            </ImageButton.Source>
+                        </ImageButton>
+
+
+                    </Grid>
+                </ViewCell>
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

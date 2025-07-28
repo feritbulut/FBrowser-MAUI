@@ -1,0 +1,71 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FBrowser_Mobile.TabsPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="*,Auto" Padding="10">
+        <!-- Üst kısım (liste ve geri tuşu) -->
+        <VerticalStackLayout Grid.Row="0">
+            <HorizontalStackLayout>
+                <ImageButton Source="arrow.png"
+                             WidthRequest="40"
+                             HeightRequest="40"
+                             Clicked="OnBack"
+                             Margin="5,5,0,0"/>
+                <Label Text="Tabs"
+                       FontAttributes="Bold"
+                       FontSize="25"
+                       VerticalOptions="Center"
+                       Margin="10,5,0,0"/>
+            </HorizontalStackLayout>
+
+            <ListView x:Name="tabsListView"
+                      ItemSelected="OnTabSelected"
+                      Margin="0,20,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                                <Label Text="{Binding Url}"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Start"
+                                       LineBreakMode="TailTruncation"
+                                       WidthRequest="300"/>
+                                <ImageButton HeightRequest="10"
+                                             WidthRequest="10"
+                                             BackgroundColor="Transparent"
+                                             Clicked="OnCloseTabClicked"
+                                             CommandParameter="{Binding .}">
+                                    <ImageButton.Source>
+                                        <FontImageSource Glyph="✕" Color="LightGray" Size="50" />
+                                    </ImageButton.Source>
+                                </ImageButton>
+                            </HorizontalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+
+        <!-- Alt kısım sabit Border -->
+        <Border Grid.Row="1"
+                WidthRequest="70"
+                HeightRequest="70"
+                StrokeShape="RoundRectangle 40,40,40,40"
+                BackgroundColor="Transparent"
+                StrokeThickness="6"
+                Stroke="LightCoral"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Margin="0,10,0,10">
+
+            <ImageButton Source="moree.png"
+                         BackgroundColor="Transparent"
+                         Clicked="OnNewTabClicked"
+                         WidthRequest="70"
+                         HeightRequest="70"/>
+        </Border>
+
+    </Grid>
+
+</ContentPage>
