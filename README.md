@@ -21,9 +21,11 @@
 ---
 
 ## 📱 Screenshots
-![WhatsApp Image 2025-07-28 at 05 21 19](https://github.com/user-attachments/assets/dd706cb9-1270-4659-a8c6-e538dca1ffde)
 
-![WhatsApp Image 2025-07-28 at 05 21 18](https://github.com/user-attachments/assets/834004c0-f39a-458c-a4a2-ae5d14ccbc8c)
+<img src="https://github.com/user-attachments/assets/dd706cb9-1270-4659-a8c6-e538dca1ffde" width="300"/>
+
+
+<img src="https://github.com/user-attachments/assets/834004c0-f39a-458c-a4a2-ae5d14ccbc8c" width="300"/>
 
 
 ---
